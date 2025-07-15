@@ -14,7 +14,11 @@
 ## Problem Background
 When talking about finance, most of the industries working in the field are in the fields of banking, credit, and risk assessment. Every day, a large amount of loans are given out to customers daily. This creates lonng lines and long application periods. Employees and staff are also rushed to evaluate customer’s risk assesment and create misjudgements when evaluating a customer’s risk. When a customer’s risk assesment is done incorrectly, it can lead to healthy / risk free customers to not be given any loans and people that have a history of missing payments, be given loans. This creates a negative profits for the company and creates further issues when giving loans.
 
+When assessing credit risks, analysts use the 5 C's of credit : Character, Capacity, Capital, Collateral, and Conditions. **Character** refers to your credit history, or how you've managed debt in the past. **Capacity** refers to your ability to repay loans. **Capital** includes the savings, investments, and assets you are willing to put toward a loan. **Collateral** is something you can provide as security, typically for a secured loan or secured credit card. **Conditions** include other information that helps determine whether you qualify for credit and the terms your receive (Capital One, 2024).
+
 Therefore, it is important to have a computer model that can evaluate the customer’s credit risk to streamline the process of giving loans. By using computer models, the process of evaluating loans would be halved and more loans can be given out in a much more shorter time span. The risk of miscalculating the risk of a loan would be further reduced due to further verification using computer models.
+
+Our research and analysis is further reinforced a research article done by R. Balina & M. Idasz-Balina outlining the [Drivers of Individual Credit Risk of Retail Customers](https://doi.org/10.3390/risks9120219) where the article outlines the factors and example use cases of modelling and the factors that can determine the credit risk of a customer based on other factors other than the 5 C's outlined above.(Balina & Idasz-Balina, 2021).
 
 ## Project Output
 
