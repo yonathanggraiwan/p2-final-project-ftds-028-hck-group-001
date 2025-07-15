@@ -37,33 +37,33 @@ Link to dataset : https://www.kaggle.com/datasets/rikdifos/credit-card-approval-
 
 1. `P2_FinPro_Applicant_Record_Raw.csv`
 
-    | Column                 | Explanation                   | Remarks                                                                 |
-    |------------------------|-------------------------------|-------------------------------------------------------------------------|
-    | ID                     | Client number                 |                                                                         |
-    | CODE_GENDER            | Gender                        |                                                                         |
-    | FLAG_OWN_CAR           | Is there a car                |                                                                         |
-    | FLAG_OWN_REALTY        | Is there a property           |                                                                         |
-    | CNT_CHILDREN           | Number of children            |                                                                         |
-    | AMT_INCOME_TOTAL       | Annual income                 |                                                                         |
-    | NAME_INCOME_TYPE       | Income category               |                                                                         |
-    | NAME_EDUCATION_TYPE    | Education level               |                                                                         |
-    | NAME_FAMILY_STATUS     | Marital status                |                                                                         |
-    | NAME_HOUSING_TYPE      | Way of living                 |                                                                         |
-    | DAYS_BIRTH             | Birthday                      | Count backwards from current day (0), -1 means yesterday                |
-    | DAYS_EMPLOYED          | Start date of employment      | Count backwards from current day (0). If positive, currently unemployed |
-    | FLAG_MOBIL             | Is there a mobile phone       |                                                                         |
-    | FLAG_WORK_PHONE        | Is there a work phone         |                                                                         |
-    | FLAG_PHONE             | Is there a phone              |                                                                         |
-    | FLAG_EMAIL             | Is there an email             |                                                                         |
-    | OCCUPATION_TYPE        | Occupation                    |                                                                         |
-    | CNT_FAM_MEMBERS        | Family size                   |                                                                         |
+    | Column              | Explanation              | Remarks                                                                 |
+    |---------------------|--------------------------|-------------------------------------------------------------------------|
+    | ID                  | Client number            |                                                                         |
+    | CODE_GENDER         | Gender                   |                                                                         |
+    | FLAG_OWN_CAR        | Is there a car           |                                                                         |
+    | FLAG_OWN_REALTY     | Is there a property      |                                                                         |
+    | CNT_CHILDREN        | Number of children       |                                                                         |
+    | AMT_INCOME_TOTAL    | Annual income            |                                                                         |
+    | NAME_INCOME_TYPE    | Income category          |                                                                         |
+    | NAME_EDUCATION_TYPE | Education level          |                                                                         |
+    | NAME_FAMILY_STATUS  | Marital status           |                                                                         |
+    | NAME_HOUSING_TYPE   | Way of living            |                                                                         |
+    | DAYS_BIRTH          | Birthday                 | Count backwards from current day (0), -1 means yesterday                |
+    | DAYS_EMPLOYED       | Start date of employment | Count backwards from current day (0). If positive, currently unemployed |
+    | FLAG_MOBIL          | Is there a mobile phone  |                                                                         |
+    | FLAG_WORK_PHONE     | Is there a work phone    |                                                                         |
+    | FLAG_PHONE          | Is there a phone         |                                                                         |
+    | FLAG_EMAIL          | Is there an email        |                                                                         |
+    | OCCUPATION_TYPE     | Occupation               |                                                                         |
+    | CNT_FAM_MEMBERS     | Family size              |                                                                         |
 
 2. `P2_FinPro_Credit_Record_Raw.csv`
 
-    | Feature Name     | Explanation     | Remarks                                                                                                                                       |
-    |------------------|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-    | ID               | Client number   |                                                                                                                                               |
-    | MONTHS_BALANCE   | Record month    | The month of the extracted data is the starting point, backwards. 0 = current month, -1 = previous month, and so on                          |
+    | Feature Name     | Explanation     | Remarks                                                                             |
+    |------------------|-----------------|-------------------------------------------------------------------------------------|
+    | ID               | Client number   |                                                                                     |
+    | MONTHS_BALANCE   | Record month    | The month of the extracted data is the starting point, backwards. 0 = current month, -1 = previous month, and so on            |
     | STATUS           | Status          | 0: 1–29 days past due<br>1: 30–59 days past due<br>2: 60–89 days overdue<br>3: 90–119 days overdue<br>4: 120–149 days overdue<br>5: Overdue or bad debts, write-offs for more than 150 days<br>C: Paid off that month<br>X: No loan for the month |
 
 ## Method
@@ -73,4 +73,7 @@ Link to dataset : https://www.kaggle.com/datasets/rikdifos/credit-card-approval-
 1. 
 
 ## Reference
-1. 
+1.  Balina, R., & Idasz-Balina, M. (2021). Drivers of Individual Credit Risk of Retail Customers—A Case Study on the Example of the Polish Cooperative Banking Sector. Risks, 9(12), 219. https://doi.org/10.3390/risks9120219
+2.  Capital One. (2024, February 8). What Are the 5 C’s of Credit? Capital One. https://www.capitalone.com/learn-grow/money-management/five-cs-of-credit/
+3.  The Investopedia Team. (2024, September 23). Credit Risk: Definition, Role of Ratings, and Examples. Investopedia. https://www.investopedia.com/terms/c/creditrisk.asp
+4.  Wells Fargo. (2019). Five Cs of Credit - What Lenders Look For - Wells Fargo. Wellsfargo.com. https://www.wellsfargo.com/financial-education/credit-management/five-c/
