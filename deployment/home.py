@@ -14,7 +14,7 @@ def run():
     st.markdown("""
     ### What is this Dashboard?
 
-    This interactive dashboard explains about predicting the customer application on credit card. This dashboard have 4 sidebar, which is: "Home", "EDA", "Prediction", and "SHAP" section.
+    This interactive dashboard explains about predicting the customer application on credit card. This dashboard have 4 sidebar, which is: "Home", "EDA", "Prediction" section.
     
 
     ---
