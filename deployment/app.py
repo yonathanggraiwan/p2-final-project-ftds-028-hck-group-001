@@ -1,5 +1,5 @@
 import streamlit as st
-import home, prediction
+import home, prediction, eda
 
 st.set_page_config(page_title = "Credit Risk Analysis & Modelling",
                    layout = 'centered',
@@ -10,8 +10,8 @@ with st.sidebar:
                                    'Exploratory Data Analysis (EDA) Section', 
                                    'Credit Risk Analysis Prediction Section'])
 
-# if navigation == 'Exploratory Data Analysis (EDA) Section':
-#     eda.run()
+if navigation == 'Exploratory Data Analysis (EDA) Section':
+    eda.run()
 
 if navigation == 'Credit Risk Analysis Prediction Section':
     prediction.run()

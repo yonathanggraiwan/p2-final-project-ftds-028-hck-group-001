@@ -58,24 +58,147 @@ def show():
         "Is there multicollinearity that could affect model reliability later on?",
     ])
     
-    if eda_option == "Average Prices of Used Cars by Brand":
-        custom_title("Average Prices of Used Cars by Brand")
+    if eda_option == "Approved vs Declined Credit Applications":
+        custom_title("Approved vs Declined Credit Applications")
         st.markdown("---")
         custom_title("Graph")
-        pl.avg_price_by_brand(data)
-        st.markdown("---")
-        custom_title("Conclusion")
-        custom_md("Ford and BMW cars are on average the most expensive cars compared to others. By nationality, Asian-branded cars to the likes of : Honda, Hyundai, Toyota, Kia, and Nissan is on hsa lower average prices compared to other regions. Tesla has the lowest average resale price, this could be caused by the high depreciation value of electric cars when the cars are being resold on the market.")
-    
-    elif eda_option == "Car Mileage Effect on Car Prices":
-        custom_title("Car Mileage Effect on Car Prices")
-        custom_md("Does the Mileage of the car affect it's resale value?")
-        st.markdown("---")
-        custom_title("Background")
-        custom_md("Car Mileage refers to the distance the car can reach using a full tank of gas. This metric is measured by using kmpl (Kilometres per Litre). The mileage of a car is an important factor for customers to decide their choice of car. Cars with shorter mileages are often used for city commutes, while cars with longer mileages are usually used for longer road trips or interstate driving. It is also important factor due to the assurance of safety for the customers, since longer mileages would ensure the customer wouldn't need to worry about constantly refueling their cars or having to stop due to coming short on a gas station. Our local dealership wants to analyze the relationship between prices and the car's mileage. The relationship between the two metrics can help the dealership decide on how to price the cars.")
+        pl.EDA_1_1(data)
+
+    elif eda_option == "Approval by Age":
+        custom_title("Approval by Age")
+        custom_md("Are certain age groups more likely to be approved for credit?")
         st.markdown("---")
         custom_title("Graph")
-        pl.mileage_effect_car_prices(data)
+        pl.EDA_1_2(data)
+
+    elif eda_option == "Years Employed vs Credit Approval Status":
+        custom_title("Years Employed vs Credit Approval Status")
+        custom_md("Does job tenure impact the likelihood of getting approved?")
         st.markdown("---")
-        custom_title("Conclusion")
-        custom_md("Based on the graph above, the data doesn't show adequate relationship between the increase in mileage to the price of the car. But added with the correlation test that is done and has resulted in a 0.20 correlation score, we can conclude that the mileage of the car has a weak positive relationship with the price of the car.")
+        custom_title("Graph")
+        pl.EDA_1_3(data)
+
+    elif eda_option == "Car Ownership / House Ownership vs Credit Approval":
+        custom_title("Car Ownership / House Ownership vs Credit Approval")
+        custom_md("Does owning a car or house influence credit decisions?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_1_4(data)
+
+    elif eda_option == "Occupation vs Credit Acceptance":
+        custom_title("Occupation vs Credit Acceptance")
+        custom_md("Are some jobs more likely to be approved than others?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_1_5(data)
+
+    elif eda_option == "Which gender dominates the applicant pool and does that affect approval rates?":
+        custom_title("Which gender dominates the applicant pool and does that affect approval rates?")
+        custom_md("Analyzing gender distribution and approval rates.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_2_1(data)
+
+    elif eda_option == "Do maritial status or family size impact credit approval or target outcomes?":
+        custom_title("Do maritial status or family size impact credit approval or target outcomes?")
+        custom_md("Does having a spouse or large family affect approval?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_2_2(data)
+
+    elif eda_option == "Are customers with children more likely to default or be denied?":
+        custom_title("Are customers with children more likely to default or be denied?")
+        custom_md("Assessing risk and approval by child count.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_2_3(data)
+
+    elif eda_option == "What is the average age of applicants? How does age correlate with approval?":
+        custom_title("What is the average age of applicants? How does age correlate with approval?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_2_4(data)
+
+    elif eda_option == "Do single vs married applicants show different patterns of repayment?":
+        custom_title("Do single vs married applicants show different patterns of repayment?")
+        custom_md("Comparing default rates across marital status.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_2_5(data)
+
+    elif eda_option == "What house types are most common among applicants, and how do they relate to approval?":
+        custom_title("What house types are most common among applicants, and how do they relate to approval?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_3_1(data)
+
+    elif eda_option == "Are real estate owners less risky as borrowers?":
+        custom_title("Are real estate owners less risky as borrowers?")
+        custom_md("Assessing risk or approval status among property owners.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_3_2(data)
+
+    elif eda_option == "Are Applicants From Certain Occupations More Likely To Default?":
+        custom_title("Are Applicants From Certain Occupations More Likely To Default?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_4_1(data)
+
+    elif eda_option == "Is There a Relationship Between `years_employed` and `income` or `target`?":
+        custom_title("Is There a Relationship Between `years_employed` and `income` or `target`?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_4_2(data)
+
+    elif eda_option == "How Many Customers Provide a Mobile Phone, Work Phone, or Email?":
+        custom_title("How Many Customers Provide a Mobile Phone, Work Phone, or Email?")
+        custom_md("Examining communication channel availability.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_5_1(data)
+
+    elif eda_option == "What is the distribution of months_balance (if it refers to account history)?":
+        custom_title("What is the distribution of months_balance (if it refers to account history)?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_6_1(data)
+
+    elif eda_option == "Does months_balance provide insight into credit recency or tenure? / Does begin_months have an impact for credit_status":
+        custom_title("Does months_balance provide insight into credit recency or tenure? / Does begin_months have an impact for credit_status")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_6_2(data)
+
+    elif eda_option == "Do longer account histories correlate with approval or reduced risk?":
+        custom_title("Do longer account histories correlate with approval or reduced risk?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_6_3(data)
+
+    elif eda_option == "Are there any suspiciously high child_number, income, or family_size values?":
+        custom_title("Are there any suspiciously high child_number, income, or family_size values?")
+        custom_md("Outlier detection for key demographic variables.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_7_1(data)
+
+    elif eda_option == "Do extreme income values skew the distribution? Should they be capped or log-transformed?":
+        custom_title("Do extreme income values skew the distribution? Should they be capped or log-transformed?")
+        custom_md("Exploring transformation strategies for skewed variables.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_7_2(data)
+
+    elif eda_option == "Which variables are most strongly correlated with the target or credit approval?":
+        custom_title("Which variables are most strongly correlated with the target or credit approval?")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_8_1(data)
+
+    elif eda_option == "Is there multicollinearity that could affect model reliability later on?":
+        custom_title("Is there multicollinearity that could affect model reliability later on?")
+        custom_md("Variance Inflation Factor (VIF) analysis.")
+        st.markdown("---")
+        custom_title("Graph")
+        pl.EDA_8_2(data)
