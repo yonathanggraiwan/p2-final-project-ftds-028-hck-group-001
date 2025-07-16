@@ -1,5 +1,5 @@
 import streamlit as st
-import home, shap, prediction
+import home, prediction
 
 st.set_page_config(page_title = "Credit Risk Analysis & Modelling",
                    layout = 'centered',
@@ -8,8 +8,7 @@ with st.sidebar:
     st.write('# Navigation Sidebar')
     navigation = st.radio('Page', ['Home', 
                                    'Exploratory Data Analysis (EDA) Section', 
-                                   'Credit Risk Analysis Prediction Section',
-                                   'SHAP Section'])
+                                   'Credit Risk Analysis Prediction Section'])
 
 # if navigation == 'Exploratory Data Analysis (EDA) Section':
 #     eda.run()
@@ -19,9 +18,6 @@ if navigation == 'Credit Risk Analysis Prediction Section':
 
 if navigation == 'Home':
     home.run()
-
-if navigation == 'SHAP Section':
-    shap.run()
 
 else:
     home.run()
