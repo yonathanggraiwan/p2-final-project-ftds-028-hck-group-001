@@ -1,37 +1,58 @@
 import streamlit as st
-import pandas as pd
-
 from PIL import Image
 
 def run():
-    # Main content
-    st.title("This is the SHAP section!")
-    img_url = "shap.png"
-    image = Image.open(img_url)
-    st.image(image)
+    st.title("📊 SHAP Feature Impact Dashboard")
 
-    st.markdown("""
-    ### 🧠 SHAP Feature Interpretation (Full Feature Summary)
+    st.markdown("Use this section to understand which features most influence your credit risk predictions. Visual insights are combined with detailed explanations to support decision-making.")
 
-    | **Feature**                                     | **Interpretation**                                                                                                   |
-    |-------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-    | numerical_normal__age                           | Older individuals push model output higher, indicating a positive correlation with predicted risk.                   |
-    | numerical_skewed__years_employed                | Shorter employment duration increases risk; possibly reflects job instability.                                       |
-    | numerical_skewed__education_income_ratio        | High education-to-income ratio may flag individuals with low earning relative to education, increasing predicted risk.|
-    | income_per_person                               | Higher ratio implies better financial capacity per capita, reducing risk and increasing creditworthiness.            |
-    | low_income_flag                                 | Value = 1 flags financial vulnerability; strong contributor to increased risk predictions.                           |
-    | financial_dependence_ratio                      | More children or dependents elevate this ratio, signaling financial burden and increasing model output.              |
-    | house_income_ratio                              | Mismatch between house type and income may reflect affordability concerns, impacting prediction.                     |
-    | categorical__occupation_Pensioner               | Being a pensioner increases model prediction; likely linked to income stability or age effects.                      |
-    | months_balance                                  | Affects model moderately; variation in account balance history can suggest payment habits.                           |
-    | phone                                           | Minimal variance but still influences prediction directionally; may capture technological accessibility indirectly.  |
-    | id                                              | Likely serves as a unique identifier; not meaningful for prediction and should be excluded from modeling.            |
-    | family_size                                     | Larger families may imply greater financial responsibility, slightly increasing predicted risk.                      |
-    | child_number                                    | Closely linked to family size; overlapping signal that can lead to multicollinearity.                                |
-    | categorical__gender_M                           | May push predictions up or down depending on dataset context; shows clear directional impact as binary feature.       |
-    | categorical__car_Y                               | Car ownership may reflect financial status; model learns potential affordability patterns from this binary signal.   |
-    | categorical__realty_Y                            | Owning property might reduce perceived risk depending on context; shows direct impact on prediction.                 |
-    | begin_month                                     | Older account start dates may reflect more reliable credit history, slightly reducing risk.                          |
+    # Define layout: Image on left, Explanation on right
+    col1, col2 = st.columns([1.2, 2])
 
-    ---
-    """, unsafe_allow_html=True)
+    # SHAP Beeswarm Plot
+    with col1:
+        image = Image.open("deployment/shap.png")
+        st.image(image, caption="📍 SHAP Beeswarm Plot", use_column_width=True)
+
+    # Feature Explanation Table
+    with col2:
+        st.markdown("""
+        ### 🔍 Feature Interpretations
+
+        <style>
+        th, td {
+            padding: 6px 10px;
+            text-align: left;
+        }
+        </style>
+
+        <div style="overflow-x:auto">
+        <table>
+        <thead>
+        <tr><th>📌 Feature</th><th>🧠 Interpretation</th></tr>
+        </thead>
+        <tbody>
+        <tr><td><b>numerical_normal__age</b></td><td>Older individuals increase predicted risk, positively influencing output.</td></tr>
+        <tr><td><b>numerical_skewed__years_employed</b></td><td>Shorter employment raises risk — signals job instability.</td></tr>
+        <tr><td><b>numerical_skewed__education_income_ratio</b></td><td>Higher ratio implies under-earning given education level, increasing risk.</td></tr>
+        <tr><td><b>income_per_person</b></td><td>Higher per capita income reduces risk, supporting creditworthiness.</td></tr>
+        <tr><td><b>low_income_flag</b></td><td>Value 1 flags financial vulnerability, strongly driving up risk.</td></tr>
+        <tr><td><b>financial_dependence_ratio</b></td><td>More dependents increase financial strain and elevate predictions.</td></tr>
+        <tr><td><b>house_income_ratio</b></td><td>Mismatched home type vs income signals affordability pressure.</td></tr>
+        <tr><td><b>categorical__occupation_Pensioner</b></td><td>Pensioner status increases risk — tied to income or age factors.</td></tr>
+        <tr><td><b>months_balance</b></td><td>Account history shows moderate impact; may reflect payment behavior.</td></tr>
+        <tr><td><b>phone</b></td><td>Low-variance feature, minor but consistent influence — possibly digital access.</td></tr>
+        <tr><td><b>id</b></td><td>Unique identifier — excluded from predictive modeling.</td></tr>
+        <tr><td><b>family_size</b></td><td>Larger families imply more financial responsibility, slightly increasing risk.</td></tr>
+        <tr><td><b>child_number</b></td><td>Correlates with family size; may introduce redundancy in signals.</td></tr>
+        <tr><td><b>categorical__gender_M</b></td><td>Binary gender variable with directional impact based on dataset.</td></tr>
+        <tr><td><b>categorical__car_Y</b></td><td>Ownership may reflect financial status; contributes to prediction shift.</td></tr>
+        <tr><td><b>categorical__realty_Y</b></td><td>Owning real estate often reduces predicted risk — signals stability.</td></tr>
+        <tr><td><b>begin_month</b></td><td>Earlier account start may reflect financial reliability, lowering risk.</td></tr>
+        </tbody>
+        </table>
+        </div>
+        """, unsafe_allow_html=True)
+
+if __name__ == "__main__":
+    run()

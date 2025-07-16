@@ -20,7 +20,7 @@ if navigation == 'Credit Risk Analysis Prediction Section':
 if navigation == 'Home':
     home.run()
 
-if navigation == 'SHAP':
+if navigation == 'SHAP Section':
     shap.run()
 
 else:
