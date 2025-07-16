@@ -3,15 +3,21 @@
 ## Repository Outline
 
 1. dataset > Dataset folder
-    1. P2_FinPro_Applicant_Record_Raw.csv
-    2. P2_FinPro_Credit_Record_Raw.csv
-2. models > model pkl folder
-    1. 
-3. `EDA.ipynb`> Data Analysis
-4. `load_data_postgres.ipynb` > ...
-5. `README.md` > Context to project.
+    1. `P2_FinPro_Applicant_Record_Raw.csv` > Applicant Record CSV
+    2. `P2_FinPro_Credit_Record_Raw.csv` > Credit Record of Applicant CSV
+    3. `P2_FinPro_Final_Record.csv` > Final CSV used for EDA and modelling.
+2. `EDA.ipynb`> Data Analysis
+3. `FE_Local.ipynb` > Feature Engineering using Local CSV files
+4. `FE_Postgres.ipynb` > Feature Engineering using Postgres as file storage
+5. `inference.ipynb` > Inference file, prooving model
+6. `inference.py` > Python file used for inference
+7. `model_terbaik.pkl` > model results
+8. `README.md` > Context to project.
+9. `training.ipynb` > IPYNB used for training
+10. `vintage_analysis.ipynb` > ipynb used for vintage analysis
 
 ## Problem Background
+
 When talking about finance, most of the industries working in the field are in the fields of banking, credit, and risk assessment. Every day, a large amount of loans are given out to customers daily. This creates lonng lines and long application periods. Employees and staff are also rushed to evaluate customer’s risk assesment and create misjudgements when evaluating a customer’s risk. When a customer’s risk assesment is done incorrectly, it can lead to healthy / risk free customers to not be given any loans and people that have a history of missing payments, be given loans. This creates a negative profits for the company and creates further issues when giving loans.
 
 When assessing credit risks, analysts use the 5 C's of credit : Character, Capacity, Capital, Collateral, and Conditions. **Character** refers to your credit history, or how you've managed debt in the past. **Capacity** refers to your ability to repay loans. **Capital** includes the savings, investments, and assets you are willing to put toward a loan. **Collateral** is something you can provide as security, typically for a secured loan or secured credit card. **Conditions** include other information that helps determine whether you qualify for credit and the terms your receive (Capital One, 2024).
@@ -31,11 +37,12 @@ Our research and analysis is further reinforced a research article done by R. Ba
     Analysis of the data is compiled in the `EDA.ipynb` where all the explenations of data and analysis would be inserted and can be viewed. The analysis can also be seen in our deployment in [Streamlit] or [HuggingFace]
 
 ## Possible Users : 
+
 - Bankers
 - Tellers
 - Banks
 
-## Datan
+## Data
 
 Link to dataset : https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction?select=application_record.csv
 
@@ -71,7 +78,9 @@ Link to dataset : https://www.kaggle.com/datasets/rikdifos/credit-card-approval-
     | STATUS           | Status          | 0: 1–29 days past due<br>1: 30–59 days past due<br>2: 60–89 days overdue<br>3: 90–119 days overdue<br>4: 120–149 days overdue<br>5: Overdue or bad debts, write-offs for more than 150 days<br>C: Paid off that month<br>X: No loan for the month |
 
 ## Method
-1. 
+1. [RandomForestClassifier](https://www.geeksforgeeks.org/dsa/random-forest-classifier-using-scikit-learn/)
+
+    Random Forest is a method that combines the predictions of multiple decision trees to produce a more accurate and stable result. It can be used for both classification and regression tasks. In classification tasks, Random Forest Classification predicts categorical outcomes based on the input data. It uses multiple decision trees and outputs the label that has the maximum votes among all the individual tree predictions.
 
 ## Stacks
 1. 
