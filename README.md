@@ -35,7 +35,7 @@ Our research and analysis is further reinforced a research article done by R. Ba
 - Tellers
 - Banks
 
-## Datan
+## Data
 
 Link to dataset : https://www.kaggle.com/datasets/rikdifos/credit-card-approval-prediction?select=application_record.csv
 
