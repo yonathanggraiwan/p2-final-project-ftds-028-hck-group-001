@@ -41,6 +41,12 @@ def run():
             raw_df['prediction'] = result_labels
             raw_df['probability'] = result_probs
 
+            median_income = raw_df['income'].median()
+            engineer = FeatureEngineer(median_income=median_income)
+            processed_input = engineer.transform(raw_df)
+            st.subheader("Processed Input Data for Prediction")
+            st.dataframe(processed_input.head(1))
+
             st.subheader("Data with Prediction Results")
             st.dataframe(raw_df)
 
@@ -51,14 +57,14 @@ def run():
             # === Filtered View Option ===
             filter_option = st.selectbox(
                 "Select which prediction result to view:",
-                ['Good Credit', 'NPL']
+                ['Good Credit', 'Non-Performing Loans']
             )
 
             if filter_option == 'Good Credit':
                 st.subheader("Filtered Data: Good Credit Only")
                 st.dataframe(df_good_credit)
             else:
-                st.subheader("Filtered Data: NPL Only")
+                st.subheader("Filtered Data: Non-Performing Loans Only")
                 st.dataframe(df_npl)
 
             # Save all three tables to one Excel file
@@ -67,9 +73,12 @@ def run():
                 with pd.ExcelWriter(buffer, engine="xlsxwriter") as writer:
                     df_all.to_excel(writer, sheet_name="All Predictions", index=False)
                     df_good.to_excel(writer, sheet_name="Good Credit Only", index=False)
-                    df_npl.to_excel(writer, sheet_name="NPL Only", index=False)
+                    df_npl.to_excel(writer, sheet_name="Non-Performing Loans Only", index=False)
                 return buffer.getvalue()
+            
+        
 
+            # Download button for the Excel file
             st.download_button(
                 "Download Predictions",
                 data=to_excel_with_sheets(raw_df, df_good_credit, df_npl),
