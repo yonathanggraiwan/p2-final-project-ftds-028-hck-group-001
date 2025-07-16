@@ -18,6 +18,22 @@ def run():
 
     uploaded_file = st.file_uploader("Upload Excel File (.xlsx)", type=["xlsx"])
 
+    # === Show download template section only if no file uploaded ===
+    if not uploaded_file:
+        st.markdown("---")
+        st.markdown("<p style='color:red; font-weight:bold;'>Don't have an Excel file?</p>", unsafe_allow_html=True)
+        st.write("If not, you can download the ready-made file below")
+
+        with open("template_file.xlsx", "rb") as f:
+            excel_bytes = f.read()
+
+        st.download_button(
+            label="Download Excel File",
+            data=excel_bytes,
+            file_name="template_file.xlsx",
+            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
+
     if uploaded_file:
         try:
             # Read Excel file
@@ -75,8 +91,6 @@ def run():
                     df_good.to_excel(writer, sheet_name="Good Credit Only", index=False)
                     df_npl.to_excel(writer, sheet_name="Non-Performing Loans Only", index=False)
                 return buffer.getvalue()
-            
-        
 
             # Download button for the Excel file
             st.download_button(
