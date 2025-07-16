@@ -18,7 +18,7 @@
 
 ## Problem Background
 
-When talking about finance, most of the industries working in the field are in the fields of banking, credit, and risk assessment. Every day, a large amount of loans are given out to customers daily. This creates lonng lines and long application periods. Employees and staff are also rushed to evaluate customer’s risk assesment and create misjudgements when evaluating a customer’s risk. When a customer’s risk assesment is done incorrectly, it can lead to healthy / risk free customers to not be given any loans and people that have a history of missing payments, be given loans. This creates a negative profits for the company and creates further issues when giving loans.
+The invention of 
 
 When assessing credit risks, analysts use the 5 C's of credit : Character, Capacity, Capital, Collateral, and Conditions. **Character** refers to your credit history, or how you've managed debt in the past. **Capacity** refers to your ability to repay loans. **Capital** includes the savings, investments, and assets you are willing to put toward a loan. **Collateral** is something you can provide as security, typically for a secured loan or secured credit card. **Conditions** include other information that helps determine whether you qualify for credit and the terms your receive (Capital One, 2024).
 
@@ -36,7 +36,7 @@ Our research and analysis is further reinforced a research article done by R. Ba
 
     Analysis of the data is compiled in the `EDA.ipynb` where all the explenations of data and analysis would be inserted and can be viewed. The analysis can also be seen in our deployment in [Streamlit] or [HuggingFace]
 
-## Possible Users : 
+## Possible Users :
 
 - Bankers
 - Tellers
