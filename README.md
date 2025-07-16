@@ -78,15 +78,19 @@ Link to dataset : https://www.kaggle.com/datasets/rikdifos/credit-card-approval-
     | STATUS           | Status          | 0: 1–29 days past due<br>1: 30–59 days past due<br>2: 60–89 days overdue<br>3: 90–119 days overdue<br>4: 120–149 days overdue<br>5: Overdue or bad debts, write-offs for more than 150 days<br>C: Paid off that month<br>X: No loan for the month |
 
 ## Method
+
 1. [RandomForestClassifier](https://www.geeksforgeeks.org/dsa/random-forest-classifier-using-scikit-learn/)
 
     Random Forest is a method that combines the predictions of multiple decision trees to produce a more accurate and stable result. It can be used for both classification and regression tasks. In classification tasks, Random Forest Classification predicts categorical outcomes based on the input data. It uses multiple decision trees and outputs the label that has the maximum votes among all the individual tree predictions.
 
 ## Stacks
+
 1. 
 
 ## Reference
+
 1.  Balina, R., & Idasz-Balina, M. (2021). Drivers of Individual Credit Risk of Retail Customers—A Case Study on the Example of the Polish Cooperative Banking Sector. Risks, 9(12), 219. https://doi.org/10.3390/risks9120219
 2.  Capital One. (2024, February 8). What Are the 5 C’s of Credit? Capital One. https://www.capitalone.com/learn-grow/money-management/five-cs-of-credit/
 3.  The Investopedia Team. (2024, September 23). Credit Risk: Definition, Role of Ratings, and Examples. Investopedia. https://www.investopedia.com/terms/c/creditrisk.asp
 4.  Wells Fargo. (2019). Five Cs of Credit - What Lenders Look For - Wells Fargo. Wellsfargo.com. https://www.wellsfargo.com/financial-education/credit-management/five-c/
+5. Lake, R. (2023, December 8). Personal Loan. Investopedia. https://www.investopedia.com/personal-loan-5076027
