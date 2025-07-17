@@ -201,7 +201,4 @@ def show():
         custom_md("Variance Inflation Factor (VIF) analysis.")
         st.markdown("---")
         custom_title("Graph")
-        pl.EDA_8_2(data)
-
-if __name__ == "__main__":
-    show()
+        pl.EDA_8_2(data)    
