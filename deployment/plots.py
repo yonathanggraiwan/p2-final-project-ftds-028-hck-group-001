@@ -284,36 +284,6 @@ def EDA_4_2 (data): # Please Revisit
     plt.xlabel('Years Employed')
     plt.ylabel('Income')
     plt.grid(True)
-    
-    plt.figure(figsize=(8, 6))
-    sns.regplot(
-        x=abs(data['days_employed'] / 365),  # use duration of employment in years, made positive
-        y=data['credit_status'].map({'Good Credit': 0, 'NPL': 1}),  # map categories to binary values directly
-        logistic=False,
-        scatter_kws={'alpha': 0.4},
-        line_kws={'color': 'green'}
-    )
-    plt.title('Credit Status vs Years Employed')
-    plt.xlabel('Years Employed')
-    plt.ylabel('Status Probability')
-    plt.grid(True)
-    plt.tight_layout()
-    st.pyplot(plt)
-    
-    plt.figure(figsize=(8, 6))
-    sns.regplot(
-        data=data,
-        x='income',
-        y=data['credit_status'].map({'Good Credit': 0, 'NPL': 1}),  # map categories to binary values directly
-        logistic=False,
-        scatter_kws={'alpha': 0.4},
-        line_kws={'color': 'green'}
-    )
-    plt.title('Credit Status vs Income')
-    plt.xlabel('Income')
-    plt.ylabel('Status Probability')
-    plt.grid(True)
-    plt.tight_layout()
     st.pyplot(plt)
 
 def EDA_5_1 (data):
@@ -359,36 +329,6 @@ def EDA_6_2 (data):
     plt.tight_layout()
     st.pyplot(plt)
 
-def EDA_6_3 (data):
-    # Step 1: Calculate account history length
-    account_length = data.groupby('id')['months_balance'].count().reset_index()
-    account_length.columns = ['id', 'account_history_length']
-
-    # Step 2: Use majority status signal per ID
-    credit_status = data.groupby('id')['credit_status'].agg(lambda x: x.mode()[0]).reset_index()
-
-    # Step 3: Merge datasets
-    merged = account_length.merge(credit_status, on='id', how='inner')
-
-    # Step 4: Map credit status after merging
-    merged['credit_status_mapped'] = merged['credit_status'].map({'Good Credit': 0, 'NPL': 1})
-
-    # Step 5: Plot regression
-    plt.figure(figsize=(8, 6))
-    sns.regplot(
-        data=merged,
-        x='account_history_length',
-        y='credit_status_mapped',
-        scatter_kws={'alpha': 0.3},
-        line_kws={'color': 'green'}
-    )
-    plt.title('Does Longer Account History Correlate with Credit Status?')
-    plt.xlabel('Length of Account History (months)')
-    plt.ylabel('Credit Status (1 = Good Credit, 0 = NPL)')
-    plt.grid(True)
-    plt.tight_layout()
-    st.pyplot(plt)
-
 def EDA_7_1 (data):
     features = ['child_number', 'income', 'family_size']
 
@@ -408,7 +348,7 @@ def EDA_7_2 (data):
     income_skew = skew(data['income'].dropna())
     st.markdown(f"**Skewness of income:** {income_skew:.4f}")
 
-def EDA_8_1 (data):
+def EDA_8_1_1 (data):
     # Step 1: Map target variable
     target = data['credit_status'].map({'Good Credit': 0, 'NPL': 1})
 
@@ -433,7 +373,8 @@ def EDA_8_1 (data):
 
     st.subheader("Table")
     st.dataframe(spearman_df)
-    
+
+def EDA_8_1_2 (data):
     # Define Cramér's V calculation function
     def cramers_v(col1, col2):
         contingency = pd.crosstab(col1, col2)
