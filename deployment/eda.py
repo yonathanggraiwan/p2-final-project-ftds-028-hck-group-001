@@ -283,3 +283,6 @@ def show():
         "every applicant listed a mobile phone. Since this column does not contribute meaningful information to " \
         "the model, it was excluded from the prediction process.")
         st.markdown("---")
+
+if __name__ == "__main__":
+    show()
