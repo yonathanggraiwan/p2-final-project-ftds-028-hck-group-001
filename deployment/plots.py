@@ -10,6 +10,7 @@ from scipy.stats import skew
 
 import streamlit as st
 
+
 def custom_md(text):
     st.markdown(f"<div class='custom-base custom-markdown'>{text}</div>", unsafe_allow_html=True)
 def custom_title(text):
@@ -273,7 +274,7 @@ def EDA_4_1 (data):
 
 def EDA_4_2 (data): # Please Revisit
     # Convert days_employed to years as a standalone object
-    years_employed = data['days_employed'].abs() / 365
+    # years_employed = data['days_employed'].abs() / 365
 
     plt.figure(figsize=(8, 6))
     sns.regplot(data=data, x=abs(data['days_employed'] / 365), 
@@ -417,3 +418,4 @@ def EDA_8_2 (data):
     
     st.subheader("Table")
     st.dataframe(sorted_vif)
+

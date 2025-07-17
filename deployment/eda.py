@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import plots as pl
 
-data = pd.read_csv("dataset\P2_FinPro_Final_Record.csv") # Input the CSV read file here
+data = pd.read_csv("P2_FinPro_Final_Record.csv") # Input the CSV read file here
 
 def show():
     st.title("Exploratory Data Analysis")
