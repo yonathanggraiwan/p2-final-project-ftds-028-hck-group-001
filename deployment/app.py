@@ -11,7 +11,7 @@ with st.sidebar:
                                    'Credit Risk Analysis Prediction Section'])
 
 if navigation == 'Exploratory Data Analysis (EDA) Section':
-    eda.run()
+    eda.show()
 
 if navigation == 'Credit Risk Analysis Prediction Section':
     prediction.run()

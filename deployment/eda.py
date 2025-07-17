@@ -202,3 +202,6 @@ def show():
         st.markdown("---")
         custom_title("Graph")
         pl.EDA_8_2(data)
+
+if __name__ == "__main__":
+    show()
