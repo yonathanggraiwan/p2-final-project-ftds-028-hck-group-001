@@ -39,7 +39,7 @@ def run():
     st.markdown("""
     ---
     ### How to use the Dashboard
-    - Click on the options in the **sidebar** to explore EDA, make predictions or looking for the SHAP (SHapley Additive exPlanations) section.
+    - Click on the options in the **sidebar** to explore EDA or make predictions section.
     - Try uploading various data samples to get different results.
 
     Thank you for visiting this dashboard. See you again next time!
