@@ -148,7 +148,7 @@ def show():
         st.markdown("---")
         custom_title("Conclusion")
         custom_md("Someone who is “working” has the highest number of credit applications, " \
-        "totaling 400,000 submissions, followed by “commercial associate,” “pensioner,” “state servant,” "
+        "totaling 400,000 submissions, followed by “commercial associate,” “pensioner,” “state servant,” " \
         "and “student.” Professional workers make up the largest group both in terms of applications and approvals, " \
         "indicating that being employed significantly boosts creditworthiness. " \
         "Commercial associates and pensioners also show high approval rates, likely due to their stable income and " \
