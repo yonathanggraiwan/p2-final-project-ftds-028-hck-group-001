@@ -25,9 +25,9 @@ def EDA_1_1 (data):
     st.pyplot(plt)
 
 def EDA_1_2 (data):
+    data["age"] = (-data["days_birth"]) // 365
     plt.figure(figsize=(6, 4))
     sns.barplot(x='credit_status', y='age', data=data, estimator='mean', ci=None, palette='Set2')
-
     plt.title('Average Age by Credit Approval')
     plt.xlabel('Credit Approval Status')
     plt.ylabel('Average Age')
@@ -406,7 +406,7 @@ def EDA_7_1 (data):
 
 def EDA_7_2 (data):
     income_skew = skew(data['income'].dropna())
-    print(f"Skewness of income: {income_skew:.4f}")
+    st.markdown(f"**Skewness of income:** {income_skew:.4f}")
 
 def EDA_8_1 (data):
     # Step 1: Map target variable
