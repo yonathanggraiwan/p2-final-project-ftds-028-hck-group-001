@@ -18,6 +18,3 @@ if navigation == 'Credit Risk Analysis Prediction Section':
 
 if navigation == 'Home':
     home.run()
-
-else:
-    home.run()
