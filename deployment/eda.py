@@ -3,10 +3,10 @@ import pandas as pd
 import numpy as np
 import plots as pl
 
-data = pd.read_csv("dataset/P2_FinPro_Final_Record.csv") # Input the CSV read file here
+data = pd.read_csv("P2_FinPro_Final_Record.csv") # Input the CSV read file here
 
 def show():
-    st.title("Exploratory Data Analysis")
+    st.markdown("<h1 style='font-size: 62px;text-align: center;'>Exploratory Data Analysis</h1>", unsafe_allow_html=True)
     
     st.markdown("""
     <style>

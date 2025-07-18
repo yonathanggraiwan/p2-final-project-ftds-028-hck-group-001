@@ -274,17 +274,19 @@ def EDA_4_1 (data):
 
 def EDA_4_2 (data): # Please Revisit
     # Convert days_employed to years as a standalone object
-    # years_employed = data['days_employed'].abs() / 365
 
     plt.figure(figsize=(8, 6))
-    sns.regplot(data=data, x=abs(data['days_employed'] / 365), 
-                y='income',
-                scatter_kws={'alpha':0.5}, 
-                line_kws={'color':'green'})
+    sns.regplot(
+        data=data,
+        x=abs(data['days_employed'] / 365),
+        y='income',
+        fit_reg=False,  # Matikan garis regresi
+        scatter_kws={'color': 'green'}  # Ubah warna titik jadi hijau
+    )
     plt.title('Income vs Years Employed')
     plt.xlabel('Years Employed')
     plt.ylabel('Income')
-    plt.grid(True)
+    plt.tight_layout()
     st.pyplot(plt)
 
 def EDA_5_1 (data):
@@ -333,11 +335,10 @@ def EDA_6_2 (data):
 def EDA_7_1 (data):
     features = ['child_number', 'income', 'family_size']
 
-    # Make the plot side by side
     fig, axes = plt.subplots(1, len(features), figsize=(18, 6))
 
     for i, feature in enumerate(features):
-        sns.boxplot(y=data[feature], ax=axes[i])
+        sns.boxplot(y=data[feature], ax=axes[i], color='green')  # Tambah warna hijau
         axes[i].set_title(f'Boxplot of {feature}')
         axes[i].set_xlabel(feature)
         axes[i].grid(True)
@@ -347,7 +348,9 @@ def EDA_7_1 (data):
 
 def EDA_7_2 (data):
     income_skew = skew(data['income'].dropna())
-    st.markdown(f"**Skewness of income:** {income_skew:.4f}")
+    left_co, cent_co,last_co = st.columns(3)
+    with cent_co:
+        st.metric(label="Skewness of Income", value=f"{income_skew:.4f}")
 
 def EDA_8_1_1 (data):
     # Step 1: Map target variable

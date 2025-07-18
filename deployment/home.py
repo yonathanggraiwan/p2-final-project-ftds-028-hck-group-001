@@ -5,7 +5,9 @@ def run():
     st.markdown("<h1 style='font-size: 62px;text-align: center;'>Welcome to Credify!</h1>", unsafe_allow_html=True)
     
     # Project logo/image
-    st.image("deployment/credify.png", use_container_width=True)
+    left_co, cent_co,last_co = st.columns(3)
+    with cent_co:
+        st.image("credify.png", width=300) 
 
     # Introduction paragraph
     paragraph1 = "This interactive dashboard provides an end-to-end view of our credit scoring project, focusing on predicting whether a customer is eligible for a credit card based on key financial and demographic information."
@@ -67,19 +69,8 @@ def run():
     # HOW TO USE SECTION
     st.write("<h1 style='font-size: 20px;'>How to Use This App?</h1>", unsafe_allow_html=True)
     paragraph3 = "Explore the **EDA section** to learn more about the data we used and the patterns we uncovered. Then, try the **Prediction** tab by uploading an Excel file of your own applicants to see how our model evaluates their credit risk."
-    st.markdown(
-        f"""
-        <style>
-        .paragraph {{
-            text-align: justify;
-            font-size: 16px;
-            line-height: 1.6;
-        }}
-        </style>
-        <p class="paragraph">{paragraph3}</p>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown(paragraph3)
+
 
 if __name__ == "__main__":
     run()

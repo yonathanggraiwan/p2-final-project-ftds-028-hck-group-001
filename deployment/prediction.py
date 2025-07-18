@@ -8,13 +8,13 @@ def run():
     # === Load model ===
     @st.cache_resource
     def load_model():
-        with open("deployment/model_lgbm.pkl", "rb") as f:
+        with open("model_lgbm.pkl", "rb") as f:
             model = pickle.load(f)
         return model
 
     model = load_model()
 
-    st.title("Machine Learning Inference from Excel File")
+    st.markdown("<h1 style='font-size: 48px; text-align: center;'>Credit Risk Analysis Prediction Section</h1>", unsafe_allow_html=True)
 
     uploaded_file = st.file_uploader("Upload Excel File (.xlsx)", type=["xlsx"])
 
@@ -24,7 +24,7 @@ def run():
         st.markdown("<p style='color:red; font-weight:bold;'>Don't have an Excel file?</p>", unsafe_allow_html=True)
         st.write("If not, you can download the ready-made file below")
 
-        with open("deployment/template_file.xlsx", "rb") as f:
+        with open("template_file.xlsx", "rb") as f:
             excel_bytes = f.read()
 
         st.download_button(

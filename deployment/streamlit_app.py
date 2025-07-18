@@ -2,18 +2,19 @@ import streamlit as st
 from PIL import Image
 import home, prediction, eda, profile_page
 
-st.set_page_config(page_title = "Credit Loan Prediction with Credify",
+st.set_page_config(page_title = "Credit Risk Analysis & Modelling",
                    layout = 'centered',
                    initial_sidebar_state = 'expanded')
 with st.sidebar:
     
-    logo = Image.open("deployment/credify.png")
-    st.sidebar.image(logo, width=80)
+    left_co, cent_co,last_co = st.columns(3)
+    with cent_co:
+        st.image("credify.png", width=300) 
     st.write('# Navigation Sidebar')
     navigation = st.radio('Page', ['Home', 
-                                   'About our Team',
                                    'Exploratory Data Analysis (EDA)', 
-                                   'Credit Risk Analysis Prediction'])
+                                   'Credit Risk Analysis Prediction',
+                                   'About Our Team'])
 
 if navigation == 'Exploratory Data Analysis (EDA)':
     eda.show()
@@ -21,8 +22,8 @@ if navigation == 'Exploratory Data Analysis (EDA)':
 if navigation == 'Credit Risk Analysis Prediction':
     prediction.run()
 
-if navigation == 'About our Team':
-    profile_page.show()
-
 if navigation == 'Home':
     home.run()
+
+if navigation == 'About Our Team':
+    profile_page.show()
