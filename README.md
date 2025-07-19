@@ -85,7 +85,10 @@ Link to dataset : https://www.kaggle.com/datasets/rikdifos/credit-card-approval-
 
 ## Stacks
 
-1. 
+1. **Programming Language:** Python 
+2. **Libraries:** pandas, numpy, scikit-learn, lightgbm, matplotlib, seaborn
+3. **Database:** PostgreSQL 
+4. **Tools:** Streamlit 
 
 ## Reference
 
